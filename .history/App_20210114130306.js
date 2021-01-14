@@ -13,21 +13,22 @@ const App = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [temp, setTemp] = useState();
   const [nowweather, setNowWeather] = useState();
-  const [city, setCity] = useState();
+  const [city, getCity] = useState();
   
 
-  // const weathers = ['Thunderstorm','Dizzle','Rain','Snow','Atmosphere','Clear','Clouds','Haze','Mist','Dust'];
+  // const weathers = ['Thunderstorm','Dizzle','Rain','Snow','Atmosphere','Clear','Clouds'];
 
   const getWeather = async(latitude, longitude) =>{
       const {data} = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
         setIsLoading(false);
         const ntemp = data.main.temp;
+        console.log(ntemp);
         setTemp(ntemp);
         const nweather = data.weather[0].main;
+        console.log(nweather);
         setNowWeather(nweather);
-        const ncity = data.name;
-        setCity(ncity);
+        console.log(data.name);
   };
   const getLocation = async() =>{
     try{
@@ -42,7 +43,7 @@ const App = (props) => {
   },[isLoading]);
 
   
-  return (isLoading ? <Loading/> : <Weather temp={temp} weather={nowweather} city={city}/>);
+  return (isLoading ? <Loading/> : <Weather temp={temp} weather={nowweather}/>);
 };
 
 export default App;

@@ -16,7 +16,7 @@ const App = (props) => {
   const [city, setCity] = useState();
   
 
-  // const weathers = ['Thunderstorm','Dizzle','Rain','Snow','Atmosphere','Clear','Clouds','Haze','Mist','Dust'];
+  // const weathers = ['Thunderstorm','Dizzle','Rain','Snow','Atmosphere','Clear','Clouds'];
 
   const getWeather = async(latitude, longitude) =>{
       const {data} = await axios.get(
@@ -26,6 +26,7 @@ const App = (props) => {
         setTemp(ntemp);
         const nweather = data.weather[0].main;
         setNowWeather(nweather);
+        console.log(data.name);
         const ncity = data.name;
         setCity(ncity);
   };

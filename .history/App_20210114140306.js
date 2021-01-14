@@ -25,7 +25,9 @@ const App = (props) => {
         const ntemp = data.main.temp;
         setTemp(ntemp);
         const nweather = data.weather[0].main;
+        console.log(nweather);
         setNowWeather(nweather);
+        console.log(data.name);
         const ncity = data.name;
         setCity(ncity);
   };
