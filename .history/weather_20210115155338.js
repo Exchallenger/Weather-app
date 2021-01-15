@@ -20,18 +20,17 @@ const Weather = ({temp, weather, city}) => {
             break;
         case 'Rain':
             nweather = 'rainy';
-            ncolor = 'blue';
-            grad=['#005aa7', '#fffde4'];
+            ncolor = 'blue'
             break;
         case 'Snow':
             nweather = 'snow';
             ncolor = 'white';
-            grad=['#ada996','#f2f2f2','#dbdbdb', '#eaeaea'];
             break;
         case 'Clouds':
             nweather = 'cloudy';
             ncolor = 'grey';
-            grad = ['#e6dada','#274046'];
+            // grad = ['#e6dada','#274046'];
+            grad=['#005aa7', '#fffde4'];
             break;
         default:
             nweather='happy-outline';
@@ -75,8 +74,6 @@ const Weather = ({temp, weather, city}) => {
             justifyContent:"center",
             alignItems:"center",
             color:"white",
-            marginBottom:40,
-            paddingBottom:10,
         },
         icon:{
             padding:40,

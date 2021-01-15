@@ -65,18 +65,16 @@ const Weather = ({temp, weather, city}) => {
             alignItems:"center",
         },
         container1:{
-            flex:2,
+            flex:3,
             justifyContent:"center",
             alignItems:"center",
             color:"white",
         },
         container2:{
-            flex:1,
+            flex:2,
             justifyContent:"center",
             alignItems:"center",
             color:"white",
-            marginBottom:40,
-            paddingBottom:10,
         },
         icon:{
             padding:40,

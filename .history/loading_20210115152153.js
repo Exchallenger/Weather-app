@@ -1,14 +1,12 @@
-import React from 'react';
-import {StyleSheet, Text, View, StatusBar, Animated} from "react-native";
-import { LinearGradient } from 'expo-linear-gradient';
+import React,{Component} from 'react';
+import {StyleSheet, Text, View} from "react-native";
 
 export default function Loading(){
     return(
-    <LinearGradient colors={['#4568dc','#b06ab3']} style={styles.container}>
-        <StatusBar barStyle="light-content"/>
+    <View style={styles.container}>
         <View style={styles.load}></View>
-        <View style={styles.texts}><Text style={styles.text}>Getting Weather...</Text></View>
-    </LinearGradient>);
+        <View style={styles.texts}><Text style={styles.text}>Getting Weather</Text></View>
+    </View>);
 }
 
 const styles = StyleSheet.create({
@@ -21,22 +19,20 @@ const styles = StyleSheet.create({
         backgroundColor:"#FDF6AA"
     },
     texts:{
-        flex:1,
+        flex:9,
         justifyContent:"flex-end",
         alignItems:"flex-end",
-        marginBottom:120
     },
     text:{
-        color:"white",
+        color:"#2c2c2c",
         fontSize:30,
     },
     load:{
         position:"absolute",
-        top:350,
+        top:450,
         height:66,
         width:66,
-        borderWidth:3,
-        borderTopColor:"white",
+        backgroundColor:'red',
         borderRadius:50,
     }
 });

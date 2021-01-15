@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import {Alert} from "react-native";
 import React, { useEffect, useState } from 'react';
 import Loading from './loading';

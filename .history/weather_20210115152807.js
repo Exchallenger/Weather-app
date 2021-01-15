@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {StyleSheet,View,Text, StatusBar} from 'react-native';
+import {StyleSheet,View,Text} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {Ionicons,Feather,FontAwesome,FontAwesome5} from '@expo/vector-icons';
 import moment from 'moment';
@@ -16,27 +16,22 @@ const Weather = ({temp, weather, city}) => {
         case 'Clear':
             var nweather = 'sunny';
             var ncolor = 'red';
-            var grad = ['#f12711', '#f5af19'];
             break;
         case 'Rain':
             nweather = 'rainy';
-            ncolor = 'blue';
-            grad=['#005aa7', '#fffde4'];
+            ncolor = 'blue'
             break;
         case 'Snow':
             nweather = 'snow';
             ncolor = 'white';
-            grad=['#ada996','#f2f2f2','#dbdbdb', '#eaeaea'];
             break;
         case 'Clouds':
             nweather = 'cloudy';
             ncolor = 'grey';
-            grad = ['#e6dada','#274046'];
             break;
         default:
             nweather='happy-outline';
             ncolor = 'white';
-            grad = ['#77a1d3','#79cbca','#e684ae'];
             break;
      }
     }
@@ -44,7 +39,7 @@ const Weather = ({temp, weather, city}) => {
 
 
     return (
-        <LinearGradient  style={styles.container} colors={grad}>
+        <LinearGradient  style={styles.container} colors={['rgba(0,0,0,0.8)', 'transparent']}>
             <View style={styles.container1}>
                 <Text style={styles.date}>{date}</Text>
                 <Ionicons style={styles.icon} name={nweather} size={66} color={ncolor} />
@@ -75,8 +70,6 @@ const Weather = ({temp, weather, city}) => {
             justifyContent:"center",
             alignItems:"center",
             color:"white",
-            marginBottom:40,
-            paddingBottom:10,
         },
         icon:{
             padding:40,

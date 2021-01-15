@@ -76,7 +76,7 @@ const Weather = ({temp, weather, city}) => {
             alignItems:"center",
             color:"white",
             marginBottom:40,
-            paddingBottom:10,
+            paddingBottom:40,
         },
         icon:{
             padding:40,

@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import {Alert} from "react-native";
 import React, { useEffect, useState } from 'react';
 import Loading from './loading';
@@ -20,7 +21,7 @@ const App = (props) => {
   const getWeather = async(latitude, longitude) =>{
       const {data} = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
-        setIsLoading(true);
+        setIsLoading(false);
         const ntemp = data.main.temp;
         setTemp(ntemp);
         const nweather = data.weather[0].main;

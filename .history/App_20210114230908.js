@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import {Alert} from "react-native";
 import React, { useEffect, useState } from 'react';
 import Loading from './loading';
@@ -34,7 +35,7 @@ const App = (props) => {
       const {coords : {latitude, longitude}} = await Location.getCurrentPositionAsync();
       getWeather(latitude, longitude);
     }catch(error){
-      Alert.alert("Can't find you", "so sad");
+      Alert.alert("Cat find you", "so sad");
     }}
   useEffect(()=>{
     getLocation();
